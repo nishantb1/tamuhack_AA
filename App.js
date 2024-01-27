@@ -3,36 +3,9 @@ import { StyleSheet, Text, View, Button, TextInput, Style } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import MapView from 'react-native-maps';
-import React, {useState} from 'react';
+
 
 const Stack = createNativeStackNavigator();
-
-//Login Page
-const LoginScreen = () => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-
-  const handleLogin = () => {
-    fetch('server_ip', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({username, password}),
-    })
-    .then(response => response.json())
-    .then(data => {
-      if(data === 'Login sucessful'){
-        console.log('Logged in');
-      } else{
-        console.log('Failed to log in:', data);
-      }
-    })
-    .catch(error => {
-      console.error('Error', error);
-    });
-  };
-}
 
 export default function App() {
   return (
