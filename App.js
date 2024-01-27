@@ -1,10 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { StyleSheet, Text, View, Button, TextInput, Style } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import MapView from 'react-native-maps';
 import React, {useState} from 'react';
-import { View, TextInput, Button, Style, StyleSheet } from 'react-native';
 
 const Stack = createNativeStackNavigator();
 
@@ -26,12 +25,8 @@ export default function App() {
 function MapScreen({navigation}) {
   return (
     <View> 
-      <MapView initialRegion={{
-        latitude: 37.78825,
-        longitude: -122.4324,
-        latitudeDelta: 0.0922,
-        longitudeDelta: 0.0421,
-      }}styles={{width: '100%', height: '100%',}} />
+      <Text> asdf </Text>
+      <MapView style={styles.map}/>
     </View>
   );
 }
@@ -39,7 +34,7 @@ function MapScreen({navigation}) {
 function HomeScreen({navigation}) {
   return (
     <View>
-      <Text> Home Screen </Text>
+      <Text> Home Sasdfcreen </Text>
       <Button onPress = {() => navigation.navigate('Details')} title='go to details'/>
       <Button onPress = {() => navigation.navigate('Map')} title='go to map'/>
     </View>
@@ -71,4 +66,8 @@ const styles = StyleSheet.create({
     height: 440,
     borderRadius: 18,
   },
+  map: {
+    width: '100%',
+    height: '100%',
+  }
 });
