@@ -25,7 +25,6 @@ export default function App() {
 function MapScreen({navigation}) {
   return (
     <View> 
-      <Text> asdf </Text>
       <MapView style={styles.map}/>
     </View>
   );
