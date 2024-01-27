@@ -3,11 +3,35 @@ import { StyleSheet, Text, View, Button, TextInput, Style } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import MapView from 'react-native-maps';
-
+import MapScreen from './components/MapScreen'
+import * as Location from 'expo-location';
+import React, { useState, useEffect } from 'react';
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
+  //const [location, setLocation] = useState(null);
+  const [errorMsg, setErrorMsg] = useState(null);
+  useEffect(() => {
+    (async () => {
+      let {status} = await Location.requestForegroundPermissionsAsync();
+      if (status !== 'granted') {
+        setErrorMsg('Permission to access location was denied');
+        return;
+      }
+      //let location = await Location.getCurrentPositionAsync();
+      //setLocation(location);
+    })();
+  }, []);
+
+  let text = 'Waiting..';
+  if (errorMsg) {
+    text = errorMsg;
+  } /*else if (location) {
+    console.log(location);
+  }
+  */
+
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName='Home'> 
@@ -20,13 +44,7 @@ export default function App() {
   );
 }
 
-function MapScreen({navigation}) {
-  return (
-    <View> 
-      <MapView style={styles.map}/>
-    </View>
-  );
-}
+
 
 function HomeScreen({navigation}) {
   return (
@@ -63,8 +81,5 @@ const styles = StyleSheet.create({
     height: 440,
     borderRadius: 18,
   },
-  map: {
-    width: '100%',
-    height: '100%',
-  }
+  
 });
