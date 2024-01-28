@@ -24,7 +24,7 @@ const LoginScreen = ({ navigation }) => {
       }
     })
     .catch(error => {
-      console.error('Error', error);
+      console.error(error);
     });
   };
 
@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
       flex: 1,
       justifyContent: 'center',
       alignItems: 'center',
-      backgroundColor: '#f5f5f5',
+      backgroundColor: '#dfdfdf',
       padding: 20,
     },
     logo: {
@@ -76,7 +76,8 @@ const styles = StyleSheet.create({
     input: {
       height: 40,
       width: '80%',
-      marginVertical: 10,
+      marginBottom: 25,
+      marginVertical: 5,
       borderWidth: 1,
       padding: 10,
       borderColor: '#ddd',
