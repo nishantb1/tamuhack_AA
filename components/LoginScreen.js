@@ -41,7 +41,7 @@ const LoginScreen = ({ navigation }) => {
                 //const users = JSON.parse(usersFile);
                 const user = usersFile.find((u) => u.username === username);
                 if (user && user.password === password) {
-                    navigation.replace('Home');
+                    navigation.replace('Home', { username });
 
                 } else {
                     console.log('Invalid user or password');

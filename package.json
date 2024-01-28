@@ -25,14 +25,12 @@
     "react-native": "0.73.2",
     "react-native-sqlite-storage": "^6.0.1",
     "react-native-web": "~0.19.6",
-<<<<<<< HEAD
-    "expo-file-system": "~16.0.5"
-=======
+
     "react-native-leaderboard": "*",
     "react-native-maps": "1.7.1",
     "expo-location": "~16.1.0",
     "react-native-fs": "*"
->>>>>>> facbb80913b995265a9ccf2b86d1a305ddfcbe50
+
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"
