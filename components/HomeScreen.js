@@ -22,7 +22,7 @@ function HomeScreen({ navigation, route }) {
     });
     return (
         <View style={styles.container}>
-            <Text style={styles.text}> Your flights with </Text>
+            <Text> Home Screen </Text>
             <Image
                 source={{
                     uri: 'https://s202.q4cdn.com/986123435/files/doc_downloads/logos/american-airlines/THUMB-aa_aa__ahz_4cp_grd_pos-(1).png',
@@ -44,6 +44,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
+        padding: 120
     },
     logoutButton: {
         backgroundColor: 'blue', 
