@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import {Dimensions} from 'react-native';
-import { StyleSheet, Text, View, Button, TextInput, Image } from 'react-native';
-
+import { StyleSheet, Text, View, Button, TextInput, Image, Alert } from 'react-native';
+import HomeScreen from './HomeScreen'
+import * as FileSystem from 'expo-file-system';
+import usersFile from './users.json'
 const LoginScreen = ({ navigation }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-
+    const [loggedIn, setLoggedin] = useState(false);
 //   const handleLogin = () => {
 //     fetch('http://localhost:3000/login', {
 //       method: 'POST',
@@ -28,13 +30,26 @@ const LoginScreen = ({ navigation }) => {
 //     });
 //   };
 
-    const handleLogin = () => {
+    const handleLogin = async () => {
         if (username === 'admin' && password === 'admin'){
-            Alert.alert('Login Successful', 'You have been logged in.'[
-                { text: "OK", onPress: () => navigation.navigate(HomeScreen)}
-            ]);
+            navigation.replace('Home')
         } else {
-            Alert.alert('Login failed');
+            try {
+                console.log('before')
+
+
+                //const users = JSON.parse(usersFile);
+                const user = usersFile.find((u) => u.username === username);
+                if (user && user.password === password) {
+                    navigation.replace('Home');
+
+                } else {
+                    console.log('Invalid user or password');
+                }
+            } catch (error) {
+                console.error('Error reading or parsing users.json?', error);
+            }
+//            Alert.alert('Login failed');
         }
     };
 

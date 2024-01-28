@@ -5,9 +5,8 @@ import MapScreen from './components/MapScreen'
 import * as Location from 'expo-location';
 import React, { useState, useEffect } from 'react';
 import LoginScreen from './components/LoginScreen';
-
+import HomeScreen from './components/HomeScreen';
 const Stack = createNativeStackNavigator();
-const db = SQLite.openDatabase('travelers.db');
 
 export default function App() {
   //const [location, setLocation] = useState(null);
@@ -47,15 +46,7 @@ export default function App() {
 
 
 
-function HomeScreen({navigation}) {
-  return (
-    <View>
-      <Text> Home Sasdfcreen </Text>
-      <Button onPress = {() => navigation.navigate('Details')} title='go to details'/>
-      <Button onPress = {() => navigation.navigate('Map')} title='go to map'/>
-    </View>
-  );
-}
+
 
 function DetailsScreen({navigation}) {
   return (
