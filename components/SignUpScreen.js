@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, View, TextInput, Button, Alert } from 'react-native';
+import { StyleSheet, View, TextInput, Button, Alert, Text, TouchableOpacity } from 'react-native';
 //import RNFS from 'react-native-fs';
 
 const handleSignUp = () => {
@@ -40,36 +40,80 @@ const handleSignUp = () => {
   };
 const SignUpScreen = () => {
   return (
-    <View>
-    <TextInput
-        //style={styles.input}
+    <View style={styles.container}>
+      <Text style={styles.title}>Sign Up</Text>
+      <TextInput
+        style={styles.input}
         placeholder="Username"
-        //value={username}
-        //onChangeText={setUsername}
+        placeholderTextColor="#888"
+        // value={username}
+        // onChangeText={setUsername}
         autoCapitalize="none"
-    />
-    <TextInput
-        //style={styles.input}
+      />
+      <TextInput
+        style={styles.input}
         placeholder="Password"
+        placeholderTextColor="#888"
         secureTextEntry
-        //value={password}
-        //onChangeText={setPassword}
+        // value={password}
+        // onChangeText={setPassword}
         autoCapitalize="none"
-    />
-    <TextInput
-        //style={styles.input}
+      />
+      <TextInput
+        style={styles.input}
         placeholder="Confirm Password"
+        placeholderTextColor="#888"
         secureTextEntry
-        //value={passwordConfirm}
-        //onChangeText={setPasswordConfirm}
+        // value={passwordConfirm}
+        // onChangeText={setPasswordConfirm}
         autoCapitalize="none"
-    />
-    <Button
-        title="SignUp"
-        onPress={handleSignUp}
-    />
+      />
+      <TouchableOpacity style={styles.button} onPress={handleSignUp}>
+        <Text style={styles.buttonText}>Sign Up</Text>
+      </TouchableOpacity>
     </View>
-);
-}
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#F7F7F7',
+    padding: 20,
+  },
+  title: {
+    fontSize: 30,
+    fontWeight: 'bold',
+    color: '#333',
+    marginBottom: 30,
+  },
+  input: {
+    height: 50,
+    width: '80%',
+    marginVertical: 10,
+    borderWidth: 1,
+    borderColor: '#ccc',
+    borderRadius: 8,
+    padding: 15,
+    fontSize: 16,
+    backgroundColor: '#fff',
+  },
+  button: {
+    width: '80%',
+    backgroundColor: '#007AFF',
+    padding: 15,
+    borderRadius: 8,
+    marginTop: 20,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  buttonText: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+});
 
 export default SignUpScreen;

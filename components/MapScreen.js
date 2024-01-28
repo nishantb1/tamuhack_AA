@@ -8,7 +8,6 @@ const MapScreen = ({ route }) => {
   const [currentLocation, setCurrentLocation] = useState(null);
   const [markers, setMarkers] = useState([]);
   const { username } = route.params;
-  console.log(username);
   const getCurrentLocation = async () => {
     try {
       const location = await Location.getCurrentPositionAsync({
@@ -51,49 +50,50 @@ const MapScreen = ({ route }) => {
       });
     }
   };
-
   const loadMarkers = (username) => {
-    const user = fileData.find((user) => user.username === username);
-  
+  const user = fileData.find((user) => user.username === username);
+
+  if (user && user.coordinates) {
+    const userMarkers = user.coordinates.map((coord, index) => (
+      <Marker
+        key={index}
+        coordinate={{
+          latitude: coord[0],
+          longitude: coord[1],
+        }}
+        title={user.username}
+        description={user.review}
+      />
+    ));
+
+    setMarkers(userMarkers);
+  }
+};
+
+const loadGlobalMarkers = () => {
+  console.log('Supposed to load global markers');
+
+  const globalMarkers = fileData.flatMap((user) => {
     if (user && user.coordinates) {
-      const userMarkers = user.coordinates.map((coord, index) => (
+      return user.coordinates.map((coord, index) => (
         <Marker
-          key={index}
+          key={`${user.username}_${index}`}
           coordinate={{
             latitude: coord[0],
             longitude: coord[1],
           }}
           title={user.username}
-          description={`Point ${index + 1}`}
+          description={user.review}
         />
       ));
-  
-      setMarkers(userMarkers);
     }
-  };
+    return [];
+  });
+
+  setMarkers(globalMarkers);
+};
+
   
-  const loadGlobalMarkers = () => {
-    console.log('Supposed to load global markers');
-    
-    const globalMarkers = fileData.flatMap((user) => {
-      if (user.coordinates) {
-        return user.coordinates.map((coord, index) => (
-          <Marker
-            key={`${user.username}_${index}`}
-            coordinate={{
-              latitude: coord[0],
-              longitude: coord[1],
-            }}
-            title={user.username}
-            description={`Point ${index + 1}`}
-          />
-        ));
-      }
-      return [];
-    });
-  
-    setMarkers(globalMarkers); // Update the markers state
-  };
   
 
   return (
@@ -114,7 +114,7 @@ const MapScreen = ({ route }) => {
         onPress={() => loadMarkers(username)}
       >
         <Text style={{ color: "white", fontWeight: "bold" }}>
-          Load {username} 's Markers
+          Load My Markers
         </Text>
       </TouchableOpacity>
       <TouchableOpacity

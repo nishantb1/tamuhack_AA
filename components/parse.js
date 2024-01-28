@@ -1,6 +1,6 @@
 import RNFS from 'react-native-fs';
 
-const path = RNFS.DocumentDirectoryPath + 'components\users.json';
+const path = RNFS.DocumentDirectoryPath + 'components/users.json';
 
 RNFS.readFile(path, 'utf8')
     .then(contents => {

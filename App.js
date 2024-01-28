@@ -8,8 +8,6 @@ import LoginScreen from './components/LoginScreen';
 import HomeScreen from './components/HomeScreen';
 import LeaderboardScreen from './components/LeaderboardScreen';
 import SignUpScreen from './components/SignUpScreen';
-import { GiftedChat } from 'react-native-gifted-chat';
-import Chatbot from './components/chatbot';
 
 const Stack = createNativeStackNavigator();
 
@@ -48,7 +46,6 @@ export default function App() {
         <Stack.Screen name = "SignUp" component={SignUpScreen} />
       </Stack.Navigator>
     </NavigationContainer>
-    <Chatbot />
     </>
   );
 }
