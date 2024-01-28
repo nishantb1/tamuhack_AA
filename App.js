@@ -8,6 +8,7 @@ import LoginScreen from './components/LoginScreen';
 import HomeScreen from './components/HomeScreen';
 import LeaderboardScreen from './components/LeaderboardScreen';
 import SignUpScreen from './components/SignUpScreen';
+import Chatbot from './components/Chatbot';
 
 const Stack = createNativeStackNavigator();
 
@@ -44,6 +45,7 @@ export default function App() {
         <Stack.Screen name = "Map" component={MapScreen} />
         <Stack.Screen name = "LeaderboardScreen" component={LeaderboardScreen} />
         <Stack.Screen name = "SignUp" component={SignUpScreen} />
+        <Stack.Screen name="Chatbot" component={Chatbot} />
       </Stack.Navigator>
     </NavigationContainer>
     </>
