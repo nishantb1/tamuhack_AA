@@ -137,31 +137,32 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   locationButton: {
-    backgroundColor: "blue",
-    borderColor: "blue",
-    borderRadius: 15,
+    backgroundColor: "#3781b0",
+    borderColor: "#3781b0",
+    borderRadius: 20,
     borderWidth: 15,
     position: "absolute",
     left: 20,
     bottom: 70,
   },
   loadMarkersButton: {
-    backgroundColor: "blue",
-    borderColor: "blue",
-    borderRadius: 15, 
+    backgroundColor: "#3781b0",
+    borderColor: "#3781b0",
+    borderRadius: 20, 
     borderWidth: 15,
     position: "absolute",
     left: 20,
-    bottom: 120,
+    bottom: 130,
+    shadowRadius: 100
   },
   loadGlobalButton: {
-    backgroundColor: "blue",
-    borderColor: "blue",
-    borderRadius: 15, 
+    backgroundColor: '#3781b0',
+    borderColor: "#3781b0",
+    borderRadius: 20, 
     borderWidth: 15,
     position: "absolute",
     left: 20,
-    bottom: 170, 
+    bottom: 190, 
   }
 });
 

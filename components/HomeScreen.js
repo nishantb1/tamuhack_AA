@@ -20,7 +20,7 @@ function HomeScreen({ navigation, route }) {
     return (
         <View style={styles.container}>
             <Text> Home Screen </Text>
-            <Image
+            <Image 
                 source={{
                     uri: 'https://cdn.discordapp.com/attachments/1200882082977685687/1201084520724697270/image.png?ex=65c88820&is=65b61320&hm=4d80da680343fcf7578136682a9bd0df8558240d2d60675dc022a05b68412abf&',
                 }}
@@ -41,6 +41,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
+        padding: 120
     },
     logoutButton: {
         backgroundColor: 'blue', 
