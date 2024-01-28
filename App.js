@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Button, TextInput, Style } from 'react-native';
+import { StyleSheet, Text, View, Button, TextInput, Style, SafeAreaView  } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import MapScreen from './components/MapScreen'
@@ -6,6 +6,8 @@ import * as Location from 'expo-location';
 import React, { useState, useEffect } from 'react';
 import LoginScreen from './components/LoginScreen';
 import HomeScreen from './components/HomeScreen';
+import LeaderboardScreen from './components/LeaderboardScreen';
+
 const Stack = createNativeStackNavigator();
 
 export default function App() {
@@ -38,6 +40,7 @@ export default function App() {
         <Stack.Screen name = "Home" component={HomeScreen} />
         <Stack.Screen name = "Details" component={DetailsScreen} />
         <Stack.Screen name = "Map" component={MapScreen} />
+        <Stack.Screen name="LeaderboardScreen" component={LeaderboardScreen} />
       </Stack.Navigator>
     </NavigationContainer>
     
