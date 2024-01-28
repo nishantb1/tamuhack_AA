@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View, Button, TouchableOpacity, Image } from 'react-native';
 import React from 'react';
 import {Dimensions} from 'react-native';
+import { useFonts } from 'expo-font';
 
 // function HomeScreen({navigation, route}) {
 //     const { username } = route.params;
@@ -15,19 +16,21 @@ import {Dimensions} from 'react-native';
 // </TouchableOpacity>      
 //     </View>
 function HomeScreen({ navigation, route }) {
-    const { username } = route.params;
-    
+    // const { username } = route.params;
+    const [fontsLoaded] = useFonts({
+    'frutiga': require('./SwitzeraADF-Regular.ttf'),
+    });
     return (
         <View style={styles.container}>
-            <Text> Home Screen </Text>
+            <Text style={styles.text}> Your flights with </Text>
             <Image
                 source={{
-                    uri: 'https://cdn.discordapp.com/attachments/1200882082977685687/1201084520724697270/image.png?ex=65c88820&is=65b61320&hm=4d80da680343fcf7578136682a9bd0df8558240d2d60675dc022a05b68412abf&',
+                    uri: 'https://s202.q4cdn.com/986123435/files/doc_downloads/logos/american-airlines/THUMB-aa_aa__ahz_4cp_grd_pos-(1).png',
                 }}
             style={styles.logo}
             />
             <Button onPress={() => navigation.navigate('Details')} title='Go to Details'/>
-            <Button onPress={() => navigation.navigate('Map', {username})} title='Go to Map'/>
+            <Button onPress={() => navigation.navigate('Map', {})} title='Go to Map'/>
             <Button onPress={() => navigation.navigate('LeaderboardScreen')} title='Go to Leaderboard'/>
             <TouchableOpacity style={styles.logoutButton} onPress={() => navigation.replace('Login')}>
                 <Text style={styles.logoutText}>Logout</Text>
@@ -51,6 +54,14 @@ const styles = StyleSheet.create({
     logoutText: {
         color: 'white', 
         fontWeight: 'bold',
+    },
+    text: {
+        color: 'black', 
+        fontWeight: 'bold',
+        marginBottom: 60,
+        fontSize: 40,
+        color: '#45586a',
+        fontFamily: 'frutiga',
     },
     logo: {
       width: 393,
