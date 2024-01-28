@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import {Dimensions} from 'react-native';
 import { StyleSheet, Text, View, Button, TextInput, Image } from 'react-native';
 
 const LoginScreen = ({ navigation }) => {
