@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { StyleSheet, View, TextInput, Button, Alert } from 'react-native';
-import RNFS from 'react-native-fs';
+//import RNFS from 'react-native-fs';
 
 const handleSignUp = () => {
+  /*
     if (password !== passwordConfirm) {
       Alert.alert('Error', 'Passwords do not match.');
       return;
@@ -35,37 +36,40 @@ const handleSignUp = () => {
           Alert.alert('Error', 'There was an error registering the user');
         }
       });
+      */
   };
-
-return (
-    <View style={styles.container}>
+const SignUpScreen = () => {
+  return (
+    <View>
     <TextInput
-        style={styles.input}
+        //style={styles.input}
         placeholder="Username"
-        value={username}
-        onChangeText={setUsername}
+        //value={username}
+        //onChangeText={setUsername}
         autoCapitalize="none"
     />
     <TextInput
-        style={styles.input}
+        //style={styles.input}
         placeholder="Password"
         secureTextEntry
-        value={password}
-        onChangeText={setPassword}
+        //value={password}
+        //onChangeText={setPassword}
         autoCapitalize="none"
     />
     <TextInput
-        style={styles.input}
+        //style={styles.input}
         placeholder="Confirm Password"
         secureTextEntry
-        value={passwordConfirm}
-        onChangeText={setPasswordConfirm}
+        //value={passwordConfirm}
+        //onChangeText={setPasswordConfirm}
         autoCapitalize="none"
     />
     <Button
-        title="Sign Up"
+        title="SignUp"
         onPress={handleSignUp}
     />
     </View>
 );
+}
+
 export default SignUpScreen;
