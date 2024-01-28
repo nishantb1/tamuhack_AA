@@ -24,14 +24,11 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-native": "0.73.2",
-    "react-native-sqlite-storage": "^6.0.1",
-    "react-native-web": "~0.19.6",
-
-    "react-native-leaderboard": "*",
+    "react-native-fs": "*",
+    "react-native-leaderboard": "^1.0.6",
     "react-native-maps": "1.7.1",
-    "expo-location": "~16.1.0",
-    "react-native-fs": "*"
-
+    "react-native-sqlite-storage": "^6.0.1",
+    "react-native-web": "~0.19.6"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"

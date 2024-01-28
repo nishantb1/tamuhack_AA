@@ -72,6 +72,28 @@ const MapScreen = ({ route }) => {
     }
   };
   
+  const loadGlobalMarkers = () => {
+    console.log('Supposed to load global markers');
+    
+    const globalMarkers = fileData.flatMap((user) => {
+      if (user.coordinates) {
+        return user.coordinates.map((coord, index) => (
+          <Marker
+            key={`${user.username}_${index}`}
+            coordinate={{
+              latitude: coord[0],
+              longitude: coord[1],
+            }}
+            title={user.username}
+            description={`Point ${index + 1}`}
+          />
+        ));
+      }
+      return [];
+    });
+  
+    setMarkers(globalMarkers); // Update the markers state
+  };
   
 
   return (
@@ -95,6 +117,15 @@ const MapScreen = ({ route }) => {
           Load {username} 's Markers
         </Text>
       </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.loadGlobalButton}
+        onPress={loadGlobalMarkers}
+      >
+        <Text style={{color: "white", fontWeight: "bold"}}>
+          Load Global Markers
+        </Text>
+        </TouchableOpacity>
+        
       {/* Add more buttons to load markers for other users */}
     </View>
   );
@@ -122,6 +153,15 @@ const styles = StyleSheet.create({
     position: "absolute",
     left: 20,
     bottom: 120,
+  },
+  loadGlobalButton: {
+    backgroundColor: "blue",
+    borderColor: "blue",
+    borderRadius: 15, 
+    borderWidth: 15,
+    position: "absolute",
+    left: 20,
+    bottom: 170, 
   }
 });
 

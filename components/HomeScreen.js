@@ -20,7 +20,7 @@ function HomeScreen({ navigation, route }) {
         <View style={styles.container}>
             <Text> Home Screen </Text>
             <Button onPress={() => navigation.navigate('Details')} title='Go to Details'/>
-            <Button onPress={() => navigation.navigate('Map')} title='Go to Map'/>
+            <Button onPress={() => navigation.navigate('Map', {username})} title='Go to Map'/>
             <Button onPress={() => navigation.navigate('LeaderboardScreen')} title='Go to Leaderboard'/>
             <TouchableOpacity style={styles.logoutButton} onPress={() => navigation.replace('Login')}>
                 <Text style={styles.logoutText}>Logout</Text>
