@@ -70,7 +70,8 @@ const styles = StyleSheet.create({
     logo: {
       width: 393,
       height: 150,
-      marginTop: Dimensions.get('window').height / 2 - 420,
+      marginTop: Dimensions.get('window').height / 2 - 490,
+      marginBottom: 30,
     },
     input: {
       height: 40,
