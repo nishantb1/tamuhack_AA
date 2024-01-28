@@ -1,5 +1,6 @@
-import { StyleSheet, Text, View, Button, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Button, TouchableOpacity, Image } from 'react-native';
 import React from 'react';
+import {Dimensions} from 'react-native';
 
 // function HomeScreen({navigation, route}) {
 //     const { username } = route.params;
@@ -19,6 +20,12 @@ function HomeScreen({ navigation, route }) {
     return (
         <View style={styles.container}>
             <Text> Home Screen </Text>
+            <Image
+                source={{
+                    uri: 'https://cdn.discordapp.com/attachments/1200882082977685687/1201084520724697270/image.png?ex=65c88820&is=65b61320&hm=4d80da680343fcf7578136682a9bd0df8558240d2d60675dc022a05b68412abf&',
+                }}
+            style={styles.logo}
+            />
             <Button onPress={() => navigation.navigate('Details')} title='Go to Details'/>
             <Button onPress={() => navigation.navigate('Map', {username})} title='Go to Map'/>
             <Button onPress={() => navigation.navigate('LeaderboardScreen')} title='Go to Leaderboard'/>
@@ -44,6 +51,12 @@ const styles = StyleSheet.create({
     logoutText: {
         color: 'white', 
         fontWeight: 'bold',
+    },
+    logo: {
+      width: 393,
+      height: 150,
+      marginTop: Dimensions.get('window').height / 2 - 490,
+      marginBottom: 30,
     },
 });
 
