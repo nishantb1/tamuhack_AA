@@ -114,7 +114,7 @@ const MapScreen = ({ route }) => {
         onPress={() => loadMarkers(username)}
       >
         <Text style={{ color: "white", fontWeight: "bold" }}>
-          My Markers
+          Load {username} 's Markers
         </Text>
       </TouchableOpacity>
       <TouchableOpacity

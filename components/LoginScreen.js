@@ -66,18 +66,20 @@ const LoginScreen = ({ navigation }) => {
         }}
         style={styles.logo}
       />
-      <TextInput placeholder='Username'
+      <Text>Username</Text>
+      <TextInput
         style={styles.input}
         value={username}
         onChangeText={setUsername}
       />
-      <TextInput placeholder='Password'
+      <Text>Password</Text>
+      <TextInput
         style={styles.input}
         value={password}
         onChangeText={setPassword}
         secureTextEntry
       />
-      <Button 
+      <Button
         title="Login"
         onPress={handleLogin}
       />
@@ -112,9 +114,8 @@ const styles = StyleSheet.create({
       borderWidth: 1,
       padding: 10,
       borderColor: '#ddd',
-      borderRadius: 20,
+      borderRadius: 5,
       backgroundColor: '#fff',
-      
     },
   });
   
