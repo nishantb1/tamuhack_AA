@@ -36,12 +36,14 @@ const LoginScreen = ({ navigation }) => {
         }}
         style={styles.logo}
       />
+      <Text>Username</Text>
       <TextInput
         style={styles.input}
         placeholder="Username"
         value={username}
         onChangeText={setUsername}
       />
+      <Text>Password</Text>
       <TextInput
         style={styles.input}
         placeholder="Password"
@@ -68,7 +70,7 @@ const styles = StyleSheet.create({
     logo: {
       width: 393,
       height: 150,
-      marginTop: Dimensions.get('window').height / 2 - 150,
+      marginTop: Dimensions.get('window').height / 2 - 400,
     },
     input: {
       height: 40,
@@ -79,15 +81,6 @@ const styles = StyleSheet.create({
       borderColor: '#ddd',
       borderRadius: 5,
       backgroundColor: '#fff',
-    },
-    button: {
-      width: '80%',
-      marginTop: 20,
-    },
-    buttonText: {
-      textAlign: 'center',
-      color: 'white',
-      fontWeight: 'bold',
     },
   });
   
