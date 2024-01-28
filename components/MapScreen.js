@@ -28,8 +28,9 @@ const MapScreen = ({ route }) => {
             }}
             title="Current Location"
             description="You are here"
-          />,
+          />
         ]);
+        // save location to users.json
       }
     } catch (error) {
       console.log(error);
