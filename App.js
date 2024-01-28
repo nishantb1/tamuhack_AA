@@ -1,8 +1,6 @@
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Button, TextInput, Style } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import MapView from 'react-native-maps';
 import MapScreen from './components/MapScreen'
 import * as Location from 'expo-location';
 import React, { useState, useEffect } from 'react';
