@@ -5,6 +5,7 @@ import MapScreen from './components/MapScreen'
 import * as Location from 'expo-location';
 import React, { useState, useEffect } from 'react';
 import LoginScreen from './components/LoginScreen';
+import SignUpScreen from './components/SignUpScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -34,7 +35,8 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Login">
-        <Stack.Screen name = "Login" component={LoginScreen}/> 
+        <Stack.Screen name = "Login" component={LoginScreen}/>
+        <Stack.Screen name="SignUp" component={SignUpScreen} /> 
         <Stack.Screen name = "Home" component={HomeScreen} />
         <Stack.Screen name = "Details" component={DetailsScreen} />
         <Stack.Screen name = "Map" component={MapScreen} />
