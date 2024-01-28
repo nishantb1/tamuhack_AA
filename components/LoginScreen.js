@@ -1,31 +1,45 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, Button, TextInput } from 'react-native';
+import { StyleSheet, Text, View, Button, TextInput, Alert } from 'react-native';
 
 const LoginScreen = ({ navigation }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleLogin = () => {
-    fetch('http://localhost:3000/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ username, password }),
-    })
-    .then(response => response.json())
-    .then(data => {
-      if (data.success) {
-        console.log('Logged in');
-        navigation.navigate(HomeScreen);
-      } else {
-        console.log('Failed to log in:', data.message);
-      }
-    })
-    .catch(error => {
-      console.error('Error', error);
-    });
-  };
+//   const handleLogin = () => {
+//     fetch('http://localhost:3000/login', {
+//       method: 'POST',
+//       headers: {
+//         'Content-Type': 'application/json',
+//       },
+//       body: JSON.stringify({ username, password }),
+//     })
+//     .then(response => response.json())
+//     .then(data => {
+//       if (data.success) {
+//         console.log('Logged in');
+//         navigation.navigate(HomeScreen);
+//       } else {
+//         console.log('Failed to log in:', data.message);
+//       }
+//     })
+//     .catch(error => {
+//       console.error('Error', error);
+//     });
+//   };
+
+    const handleLogin = () => {
+        if (username === 'admin' && password === 'admin'){
+            Alert.alert('Login Successful', 'You have been logged in.'[
+                { text: "OK", onPress: () => navigation.navigate(HomeScreen)}
+            ]);
+        } else {
+            Alert.alert('Login failed');
+        }
+    };
+
+    const handleSignUp = () => {
+        navigation.navigate('SignUp');
+    }
 
   return (
     <View style={styles.container}>
@@ -45,6 +59,11 @@ const LoginScreen = ({ navigation }) => {
       <Button
         title="Login"
         onPress={handleLogin}
+      />
+      <Button 
+        title="Sign Up"
+        onPress={handleSignUp}
+        color="blue"
       />
     </View>
   );
