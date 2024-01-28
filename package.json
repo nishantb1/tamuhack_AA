@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@expo/metro-runtime": "~3.1.1",
+    "@react-native-community/viewpager": "^5.0.11",
     "@react-navigation/native": "^6.1.9",
     "@react-navigation/native-stack": "^6.9.17",
     "bcrypt": "^5.1.1",
@@ -25,6 +26,7 @@
     "react-dom": "18.2.0",
     "react-native": "0.73.2",
     "react-native-fs": "*",
+    "react-native-gifted-chat": "^2.4.0",
     "react-native-leaderboard": "^1.0.6",
     "react-native-maps": "1.7.1",
     "react-native-sqlite-storage": "^6.0.1",

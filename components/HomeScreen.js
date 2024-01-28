@@ -21,8 +21,9 @@ function HomeScreen({ navigation, route }) {
     'frutiga': require('./SwitzeraADF-Regular.ttf'),
     });
     return (
+        <>
         <View style={styles.container}>
-            <Text> Home Screen </Text>
+            <Text> Your flights with </Text>
             <Image
                 source={{
                     uri: 'https://s202.q4cdn.com/986123435/files/doc_downloads/logos/american-airlines/THUMB-aa_aa__ahz_4cp_grd_pos-(1).png',
@@ -36,6 +37,8 @@ function HomeScreen({ navigation, route }) {
                 <Text style={styles.logoutText}>Logout</Text>
             </TouchableOpacity>
         </View>
+        <Chatbot />
+        </>
     );
 }
 
