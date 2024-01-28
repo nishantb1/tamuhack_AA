@@ -5,7 +5,6 @@ import MapScreen from './components/MapScreen'
 import * as Location from 'expo-location';
 import React, { useState, useEffect } from 'react';
 import LoginScreen from './components/LoginScreen';
-import * as SQLite from 'expo-sqlite';
 
 const Stack = createNativeStackNavigator();
 const db = SQLite.openDatabase('travelers.db');
@@ -35,7 +34,7 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
+      <Stack.Navigator initialRouteName="Login">
         <Stack.Screen name = "Login" component={LoginScreen}/> 
         <Stack.Screen name = "Home" component={HomeScreen} />
         <Stack.Screen name = "Details" component={DetailsScreen} />
