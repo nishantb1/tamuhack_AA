@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, Button, TextInput } from 'react-native';
+import { StyleSheet, Text, View, Button, TextInput, Image } from 'react-native';
 
 const LoginScreen = ({ navigation }) => {
   const [username, setUsername] = useState('');
@@ -29,6 +29,12 @@ const LoginScreen = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
+      <Image
+        source={{
+          uri: 'https://s202.q4cdn.com/986123435/files/doc_downloads/logos/american-airlines/THUMB-aa_aa__ahz_4cp_grd_pos-(1).png',
+        }}
+        style={styles.logo}
+      />
       <TextInput
         style={styles.input}
         placeholder="Username"
@@ -57,6 +63,11 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       backgroundColor: '#f5f5f5',
       padding: 20,
+    },
+    logo: {
+      width: 393,
+      height: 150,
+      marginTop: Dimensions.get('window').height / 2 - 150,
     },
     input: {
       height: 40,
