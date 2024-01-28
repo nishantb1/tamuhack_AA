@@ -3,20 +3,9 @@ import React from 'react';
 import {Dimensions} from 'react-native';
 import { useFonts } from 'expo-font';
 
-// function HomeScreen({navigation, route}) {
-//     const { username } = route.params;
-//     console.log(username); 
-//     return (
-//       <View>
-//         <Text> {username} </Text>
-//         <Button onPress = {() => navigation.navigate('Details')} title='go to details'/>
-//         <Button onPress = {() => navigation.navigate('Map', { username })} title='go to map'/>
-//         <TouchableOpacity style={{ backgroundColor: 'blue', padding: 10, borderRadius: 5 }} onPress={() => navigation.replace('Login')}>
-//   <Text onPress = {() => navigation.replace('Login')}style={{ color: 'white', fontWeight: 'bold' }}>Logout</Text>
-// </TouchableOpacity>      
-//     </View>
+
 function HomeScreen({ navigation, route }) {
-    // const { username } = route.params;
+    const { username } = route.params;
     const [fontsLoaded] = useFonts({
     'frutiga': require('./SwitzeraADF-Regular.ttf'),
     });
@@ -39,37 +28,48 @@ function HomeScreen({ navigation, route }) {
     );
 }
 
+
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: 'center',
+        justifyContent: 'flex-start',
         alignItems: 'center',
-        padding: 120
-    },
-    logoutButton: {
-        backgroundColor: 'blue', 
-        padding: 10, 
-        borderRadius: 5,
-        marginTop: 10, // Add some margin at the top for spacing
-    },
-    logoutText: {
-        color: 'white', 
-        fontWeight: 'bold',
-    },
-    text: {
-        color: 'black', 
-        fontWeight: 'bold',
-        marginBottom: 60,
-        fontSize: 40,
-        color: '#45586a',
-        fontFamily: 'frutiga',
+        backgroundColor: 'white',
+        paddingTop: 5,
+        paddingHorizontal: 16,
     },
     logo: {
-      width: 393,
-      height: 150,
-      marginTop: Dimensions.get('window').height / 2 - 490,
-      marginBottom: 30,
+        width: 200,
+        height: 100,
+        resizeMode: 'contain',
+        marginTop: 5,
+        borderRadius: 10,
+    },
+    text: {
+        fontSize: 24,
+        fontWeight: 'bold',
+        color: '#45586a',
+        fontFamily: 'frutiga',
+        marginBottom: 20,
+    },
+    buttonContainer: {
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        width: '100%',
+        marginTop: 20,
+        borderRadius: 10,
+    },
+    logoutButton: {
+        backgroundColor: '#13128B',
+        padding: 10,
+        borderRadius: 5,
+        marginTop: 10,
+    },
+    logoutText: {
+        color: 'white',
+        fontWeight: 'bold',
     },
 });
+
 
 export default HomeScreen;
