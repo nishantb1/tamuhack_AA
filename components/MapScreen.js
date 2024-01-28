@@ -7,6 +7,7 @@ const MapScreen = () => {
   const mapViewRef = React.useRef();
   const [currentLocation, setCurrentLocation] = useState(null);
   const [addMarker, setAddMarker] = useState(null);
+  const [markers, setMarkers] = useState([]);
   const getCurrentLocation = async () => {
     try {
       const location = await Location.getCurrentPositionAsync({
@@ -19,6 +20,7 @@ const MapScreen = () => {
         const tempLocation = { ...location };
         setCurrentLocation(tempLocation);
         setAddMarker(true);
+        setMarkers([...markers, tempLocation.coords]);
       }
     } catch (error) {
       console.log(error);
