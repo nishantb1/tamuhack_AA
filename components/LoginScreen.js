@@ -54,14 +54,12 @@ const LoginScreen = ({ navigation }) => {
       <Text>Username</Text>
       <TextInput
         style={styles.input}
-        placeholder="Username"
         value={username}
         onChangeText={setUsername}
       />
       <Text>Password</Text>
       <TextInput
         style={styles.input}
-        placeholder="Password"
         value={password}
         onChangeText={setPassword}
         secureTextEntry
