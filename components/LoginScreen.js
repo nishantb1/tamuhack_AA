@@ -62,7 +62,7 @@ const LoginScreen = ({ navigation }) => {
     <View style={styles.container}>
       <Image
         source={{
-          uri: 'https://s202.q4cdn.com/986123435/files/doc_downloads/logos/american-airlines/THUMB-aa_aa__ahz_4cp_grd_pos-(1).png',
+          uri: 'https://cdn.discordapp.com/attachments/1200882082977685687/1201097160456937512/Sky_Score-modified_1.png?ex=65c893e6&is=65b61ee6&hm=face50513531a7a83e1f3bd11311aab32d62891bffe7a82bbb7c15bf8a15fcd2&',
         }}
         style={styles.logo}
       />
@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
       padding: 20,
     },
     logo: {
-      width: 393,
+      width: 150,
       height: 150,
       marginTop: Dimensions.get('window').height / 2 - 490,
       marginBottom: 30,
